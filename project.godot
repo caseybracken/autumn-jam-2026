@@ -34,4 +34,4 @@ window/stretch/mode="viewport"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.1411908, 0.10938027, 0.37582797, 1)
+environment/defaults/default_clear_color=Color(0.106916465, 0.080853425, 0.30139968, 1)

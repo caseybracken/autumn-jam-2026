@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var area_2d: Area2D = $platform_large4/Area2D
+@onready var area_2d: Area2D = $platform_house/Area2D
 
 
 @onready var rich_text_label: RichTextLabel = $CanvasLayer/RichTextLabel
@@ -20,5 +20,7 @@ func _process(delta: float) -> void:
 
 
 
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("level complete")
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
