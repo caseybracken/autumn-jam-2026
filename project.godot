@@ -16,13 +16,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-DialogueSignal="*uid://ba7dlr1e0j3my"
 Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
 directories/dch_directory={}
-directories/dtl_directory={}
+directories/dtl_directory={
+"dummy": "res://Dialogic/Timelines/dummy.dtl"
+}
 layout/style_directory={}
 
 [editor_plugins]
