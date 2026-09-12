@@ -11,12 +11,19 @@ config_version=5
 [application]
 
 config/name="AutumnJam2026"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+run/main_scene="uid://dtj8s4tw02luk"
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueSignal="*uid://ba7dlr1e0j3my"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [physics]
 
@@ -27,3 +34,4 @@ DialogueSignal="*uid://ba7dlr1e0j3my"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.1411908, 0.10938027, 0.37582797, 1)
