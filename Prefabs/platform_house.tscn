@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cksv2me6ivu1b"]
+
+[ext_resource type="Script" uid="uid://edfnqig3p537" path="res://Scenes/platform_move.gd" id="1_81l2k"]
+[ext_resource type="Texture2D" uid="uid://dq8p0cpqckpng" path="res://Textures/house.png" id="2_lt0bg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6t05"]
+size = Vector2(188.05934, 18)
+
+[sub_resource type="Animation" id="Animation_vkm13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.097837105]
+}
+
+[sub_resource type="Animation" id="Animation_i4y6y"]
+resource_name = "platform"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.17401223, -0.24177925]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dka5"]
+_data = {
+&"RESET": SubResource("Animation_vkm13"),
+&"platform": SubResource("Animation_i4y6y")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf4te"]
+size = Vector2(100.42859, 58.267677)
+
+[node name="platform_house" type="StaticBody2D" unique_id=1811823125]
+rotation = -0.097837105
+script = ExtResource("1_81l2k")
+
+[node name="PlatformLarge" type="Sprite2D" parent="." unique_id=586981206]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_lt0bg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2142447517]
+position = Vector2(1.102356, 3.9396286)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_y6t05")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1749854901]
+libraries/ = SubResource("AnimationLibrary_0dka5")
+autoplay = &"platform"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1514460184]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=292043033]
+position = Vector2(-1.0159607, -40.43472)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_tf4te")

@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://dnweciw635hp1"]
+
+[ext_resource type="PackedScene" uid="uid://xix2ocemc4vi" path="res://Scenes/player.tscn" id="1_vkm13"]
+[ext_resource type="Script" uid="uid://b8d5db1e7q812" path="res://Scenes/level_manager.gd" id="1_w5xbn"]
+[ext_resource type="Script" uid="uid://edfnqig3p537" path="res://Scenes/platform_move.gd" id="2_i4y6y"]
+[ext_resource type="PackedScene" uid="uid://dcf1svfylt5w6" path="res://Prefabs/platform_large.tscn" id="3_l58rl"]
+[ext_resource type="AudioStream" uid="uid://dbabbq8rx5gs6" path="res://Audio/bg_music_1.mp3" id="4_0dka5"]
+[ext_resource type="Texture2D" uid="uid://dq8p0cpqckpng" path="res://Textures/house.png" id="5_mc6e0"]
+[ext_resource type="Texture2D" uid="uid://bobiplon38lik" path="res://Textures/start_zone.png" id="8_l58rl"]
+[ext_resource type="PackedScene" uid="uid://blwapd1sxdgho" path="res://Prefabs/platform_mid.tscn" id="8_ssg1i"]
+[ext_resource type="Texture2D" uid="uid://b404sg5orbfsv" path="res://Textures/star.png" id="9_eq7n2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
+size = Vector2(655, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6t05"]
+size = Vector2(188.05934, 18)
+
+[sub_resource type="Animation" id="Animation_vkm13"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.097837105]
+}
+
+[sub_resource type="Animation" id="Animation_i4y6y"]
+resource_name = "platform"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.17401223, -0.24177925]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0dka5"]
+_data = {
+&"RESET": SubResource("Animation_vkm13"),
+&"platform": SubResource("Animation_i4y6y")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf4te"]
+size = Vector2(100.42859, 58.267677)
+
+[node name="TestLevel" type="Node2D" unique_id=1114123946]
+script = ExtResource("1_w5xbn")
+
+[node name="Player" parent="." unique_id=1859586231 instance=ExtResource("1_vkm13")]
+z_index = 1
+position = Vector2(600, 362)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1071582215]
+position = Vector2(30, -24)
+position_smoothing_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=72905601]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1682435779]
+position = Vector2(604, 503)
+shape = SubResource("RectangleShape2D_dtjkg")
+
+[node name="BG_music" type="AudioStreamPlayer2D" parent="." unique_id=1329594927]
+stream = ExtResource("4_0dka5")
+autoplay = true
+
+[node name="platform_house" type="StaticBody2D" parent="." unique_id=1811823125]
+position = Vector2(814.9999, 326.00024)
+rotation = -0.097837105
+script = ExtResource("2_i4y6y")
+
+[node name="PlatformLarge" type="Sprite2D" parent="platform_house" unique_id=586981206]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_mc6e0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform_house" unique_id=2142447517]
+position = Vector2(1.102356, 3.9396286)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_y6t05")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform_house" unique_id=1749854901]
+libraries/ = SubResource("AnimationLibrary_0dka5")
+autoplay = &"platform"
+
+[node name="Area2D" type="Area2D" parent="platform_house" unique_id=1514460184]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform_house/Area2D" unique_id=292043033]
+position = Vector2(-1.0159607, -40.43472)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_tf4te")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=817616823]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=688766341]
+offset_left = 21.0
+offset_top = 29.0
+offset_right = 141.0
+offset_bottom = 69.0
+theme_override_font_sizes/normal_font_size = 24
+text = "00:00:00"
+
+[node name="Timer" type="Timer" parent="CanvasLayer" unique_id=1032899087]
+
+[node name="StartZone" type="Sprite2D" parent="." unique_id=1834556125]
+z_index = -1
+position = Vector2(583, 557)
+texture = ExtResource("8_l58rl")
+
+[node name="bg" type="Node" parent="." unique_id=1876757948]
+
+[node name="Star" type="Sprite2D" parent="bg" unique_id=1626636048]
+position = Vector2(230.00003, 228)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_eq7n2")
+
+[node name="Star2" type="Sprite2D" parent="bg" unique_id=924266236]
+position = Vector2(272.99997, 254)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_eq7n2")
+
+[node name="Star3" type="Sprite2D" parent="bg" unique_id=334864813]
+position = Vector2(837.9999, -101.99997)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_eq7n2")
+
+[node name="Star4" type="Sprite2D" parent="bg" unique_id=1315183885]
+position = Vector2(244.99998, -100.99997)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_eq7n2")
+
+[node name="platforms" type="Node" parent="." unique_id=512201413]
+
+[node name="platform_large" parent="platforms" unique_id=1369783877 instance=ExtResource("3_l58rl")]
+position = Vector2(716.99994, 91)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large2" parent="platforms" unique_id=1164956051 instance=ExtResource("3_l58rl")]
+position = Vector2(449.99997, 309.00003)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large3" parent="platforms" unique_id=1625292747 instance=ExtResource("3_l58rl")]
+position = Vector2(186.99994, -270.00003)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large4" parent="platforms" unique_id=457684434 instance=ExtResource("3_l58rl")]
+position = Vector2(568, -691.00006)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large5" parent="platforms" unique_id=1963551907 instance=ExtResource("3_l58rl")]
+position = Vector2(1450, -1215.0001)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large6" parent="platforms" unique_id=534166544 instance=ExtResource("3_l58rl")]
+position = Vector2(1176.0001, -682.00006)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid" parent="platforms" unique_id=1883114016 instance=ExtResource("8_ssg1i")]
+position = Vector2(931, -778)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid2" parent="platforms" unique_id=768891110 instance=ExtResource("8_ssg1i")]
+position = Vector2(1276, -1002)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid3" parent="platforms" unique_id=291680282 instance=ExtResource("8_ssg1i")]
+position = Vector2(442.99988, -79.99988)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid4" parent="platforms" unique_id=1101931908 instance=ExtResource("8_ssg1i")]
+position = Vector2(469.99988, -432.9999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid5" parent="platforms" unique_id=1415354365 instance=ExtResource("8_ssg1i")]
+position = Vector2(357.99988, 135.00018)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid6" parent="platforms" unique_id=1631121706 instance=ExtResource("8_ssg1i")]
+position = Vector2(272.99988, -563.9999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid7" parent="platforms" unique_id=1893112881 instance=ExtResource("8_ssg1i")]
+position = Vector2(1445, -841.99994)
+scale = Vector2(0.99999994, 0.99999994)
+
+[connection signal="body_entered" from="platform_house/Area2D" to="." method="_on_area_2d_body_entered"]
