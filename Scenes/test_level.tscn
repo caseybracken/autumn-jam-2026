@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://dtj8s4tw02luk"]
 
 [ext_resource type="PackedScene" uid="uid://xix2ocemc4vi" path="res://Scenes/player.tscn" id="1_iti4p"]
+[ext_resource type="PackedScene" uid="uid://ojm3mt7dkm3b" path="res://Scenes/dialog_trigger.tscn" id="2_dtjkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
 size = Vector2(655, 188)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eglq2"]
+size = Vector2(119, 92)
 
 [node name="TestLevel" type="Node2D" unique_id=1114123946]
 
@@ -15,3 +19,11 @@ position = Vector2(600, 362)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1682435779]
 position = Vector2(604, 503)
 shape = SubResource("RectangleShape2D_dtjkg")
+
+[node name="Area2D" parent="." unique_id=1998559503 instance=ExtResource("2_dtjkg")]
+position = Vector2(430, 369)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=696959175]
+position = Vector2(-49.5, -25)
+shape = SubResource("RectangleShape2D_eglq2")

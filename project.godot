@@ -14,6 +14,10 @@ config/name="AutumnJam2026"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueSignal="*uid://ba7dlr1e0j3my"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

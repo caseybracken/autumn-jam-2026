@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ojm3mt7dkm3b"]
+
+[ext_resource type="Script" uid="uid://ccv1dpo4jrctk" path="res://Scripts/dialogue_trigger.gd" id="1_mt46t"]
+
+[node name="Area2D" type="Area2D" unique_id=1998559503]
+script = ExtResource("1_mt46t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -25,4 +25,5 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		advance_dialogue.emit()
+		print("input received to advance dialogue")
+		DialogueSignal.emit_advance_dialogue()
