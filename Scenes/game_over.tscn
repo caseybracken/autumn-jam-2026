@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://bjchmba0srjy6"]
+
+[ext_resource type="Script" uid="uid://bwmxecc7jtboc" path="res://Scenes/house_cutscene.gd" id="1_14u15"]
+[ext_resource type="Texture2D" uid="uid://bguaqusql6gqx" path="res://Textures/house_bg.png" id="1_ojehl"]
+[ext_resource type="Texture2D" uid="uid://dc2t75puhdoei" path="res://Textures/character_yellow_idle.png" id="2_8fo1c"]
+[ext_resource type="Texture2D" uid="uid://djc6ecynu5c77" path="res://Textures/its_off.png" id="3_ek8ke"]
+[ext_resource type="Texture2D" uid="uid://1cbrkebhwl51" path="res://Textures/uh_oh.png" id="4_eoghk"]
+
+[sub_resource type="Animation" id="Animation_8fo1c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterYellowIdle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-791, 164)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItsOff:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UhOh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ek8ke"]
+resource_name = "new_animation"
+length = 12.0
+step = 0.0333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterYellowIdle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333335, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.7666667, 1.9666667, 2.1333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-791, 164), Vector2(-673.58, 163.525), Vector2(-523, 78), Vector2(-381.05997, 162.34166), Vector2(-255.4, 78), Vector2(-156.52002, 161.43333), Vector2(-57.64, 78), Vector2(47.420044, 160.60834), Vector2(152.48, 78), Vector2(257.54004, 159.75833), Vector2(358.48, 78), Vector2(445, 159)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ItsOff:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5130663, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UhOh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.846206),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(11.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_end"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eoghk"]
+_data = {
+&"RESET": SubResource("Animation_8fo1c"),
+&"new_animation": SubResource("Animation_ek8ke")
+}
+
+[node name="Node2D" type="Node2D" unique_id=1890375630]
+script = ExtResource("1_14u15")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1973263840]
+
+[node name="HouseBg" type="Sprite2D" parent="." unique_id=1229740672]
+position = Vector2(98.00001, 11.000002)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("1_ojehl")
+
+[node name="CharacterYellowIdle" type="Sprite2D" parent="." unique_id=901428436]
+position = Vector2(-791, 164)
+scale = Vector2(1.43, 1.43)
+texture = ExtResource("2_8fo1c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=246131887]
+libraries/ = SubResource("AnimationLibrary_eoghk")
+autoplay = &"new_animation"
+
+[node name="ItsOff" type="Sprite2D" parent="." unique_id=1747247777]
+visible = false
+position = Vector2(748, -113)
+texture = ExtResource("3_ek8ke")
+
+[node name="UhOh" type="Sprite2D" parent="." unique_id=530933001]
+visible = false
+position = Vector2(-26, 21)
+scale = Vector2(-1.255, 1.255)
+texture = ExtResource("4_eoghk")

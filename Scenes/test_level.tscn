@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xix2ocemc4vi" path="res://Scenes/player.tscn" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://ojm3mt7dkm3b" path="res://Scenes/dialog_trigger.tscn" id="2_dtjkg"]
+[ext_resource type="Resource" uid="uid://ddlbq61uoiq21" path="res://Dialogic/Timelines/dummy.dtl" id="3_eglq2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
 size = Vector2(655, 188)
@@ -23,6 +24,7 @@ shape = SubResource("RectangleShape2D_dtjkg")
 [node name="Area2D" parent="." unique_id=1998559503 instance=ExtResource("2_dtjkg")]
 position = Vector2(430, 369)
 collision_layer = 0
+timeline = ExtResource("3_eglq2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=696959175]
 position = Vector2(-49.5, -25)
