@@ -1,10 +1,12 @@
 audio "res://NPC_Anarchist.Line1.mp3"
 "Anarchist NPC": ANARCHY!
 [style name="text bubble style"]
+audio "res://PC.Line1_AnarchistDialogue.wav"
 "player character": Whoa, what?
 [style name="text bubble style"]
 audio "res://NPC_Anarchist.Line2.mp3"
 "Anarchist NPC": LET'S BURN IT ALL DOWN! SCREW SOCIETY.
 [style name="text bubble style"]
+audio "res://PC.Line2_AnarchistDialogue.wav"
 "player character": I think the aliens have got that covered!
 [style name="text bubble style"]
