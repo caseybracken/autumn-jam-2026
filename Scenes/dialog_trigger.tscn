@@ -5,5 +5,4 @@
 [node name="Area2D" type="Area2D" unique_id=1998559503]
 script = ExtResource("1_mt46t")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

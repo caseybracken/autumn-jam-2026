@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ond4lohduwfx"]
+
+[ext_resource type="Script" uid="uid://btr6ajeiklh4o" path="res://Scenes/alien_enemy.gd" id="1_dtboc"]
+[ext_resource type="PackedScene" uid="uid://24xewm3fcuve" path="res://Scenes/enemy_collider.tscn" id="2_8058l"]
+
+[sub_resource type="Curve2D" id="Curve2D_dtboc"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 14, 14, 0, 0, 0, 0, 131, 27, 0, 0, 0, 0, 180, 133, 0, 0, 0, 0, 26, 163)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mywr"]
+
+[node name="AlienEnemy" type="Path2D" unique_id=1733919163]
+curve = SubResource("Curve2D_dtboc")
+script = ExtResource("1_dtboc")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=2052310654]
+position = Vector2(14, 14)
+rotation = 0.110657215
+
+[node name="EnemyCollider" parent="PathFollow2D" unique_id=703431294 instance=ExtResource("2_8058l")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/EnemyCollider" unique_id=236631905]
+shape = SubResource("RectangleShape2D_4mywr")
