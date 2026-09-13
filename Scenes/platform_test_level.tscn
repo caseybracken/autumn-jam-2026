@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bobiplon38lik" path="res://Textures/start_zone.png" id="8_l58rl"]
 [ext_resource type="PackedScene" uid="uid://blwapd1sxdgho" path="res://Prefabs/platform_mid.tscn" id="8_ssg1i"]
 [ext_resource type="Texture2D" uid="uid://b404sg5orbfsv" path="res://Textures/star.png" id="9_eq7n2"]
+[ext_resource type="Texture2D" uid="uid://buwp8j6ic2ne3" path="res://Textures/cow.png" id="10_ssg1i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
 size = Vector2(655, 188)
@@ -56,6 +57,67 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf4te"]
 size = Vector2(100.42859, 58.267677)
 
+[sub_resource type="Animation" id="Animation_ssg1i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(55.00003, -99.999985)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_u54at"]
+resource_name = "cow"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(55.00003, -99.999985), Vector2(1620, 956)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 5.412266010434417]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7td72"]
+_data = {
+&"RESET": SubResource("Animation_ssg1i"),
+&"cow": SubResource("Animation_u54at")
+}
+
 [node name="TestLevel" type="Node2D" unique_id=1114123946]
 script = ExtResource("1_w5xbn")
 
@@ -78,7 +140,7 @@ stream = ExtResource("4_0dka5")
 autoplay = true
 
 [node name="platform_house" type="StaticBody2D" parent="." unique_id=1811823125]
-position = Vector2(814.9999, 326.00024)
+position = Vector2(1660.9999, -2792)
 rotation = -0.097837105
 script = ExtResource("2_i4y6y")
 
@@ -180,6 +242,38 @@ scale = Vector2(0.99999994, 0.99999994)
 position = Vector2(442.99988, -79.99988)
 scale = Vector2(0.99999994, 0.99999994)
 
+[node name="platform_large2" parent="platforms/platform_mid3" unique_id=2008985248 instance=ExtResource("3_l58rl")]
+position = Vector2(-777.27124, 213.4891)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large3" parent="platforms/platform_mid3" unique_id=1872310290 instance=ExtResource("3_l58rl")]
+position = Vector2(-1040.2712, -365.51096)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large4" parent="platforms/platform_mid3" unique_id=2115596489 instance=ExtResource("3_l58rl")]
+position = Vector2(-659.27124, -786.511)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large5" parent="platforms/platform_mid3" unique_id=1682740304 instance=ExtResource("3_l58rl")]
+position = Vector2(222.72876, -1310.511)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large6" parent="platforms/platform_mid3" unique_id=719702143 instance=ExtResource("3_l58rl")]
+position = Vector2(-51.27112, -777.511)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid" parent="platforms/platform_mid3" unique_id=38603693 instance=ExtResource("8_ssg1i")]
+position = Vector2(-296.27124, -873.5109)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid2" parent="platforms/platform_mid3" unique_id=269937980 instance=ExtResource("8_ssg1i")]
+position = Vector2(48.72876, -1097.5109)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid3" parent="platforms/platform_mid3" unique_id=1254287515 instance=ExtResource("8_ssg1i")]
+position = Vector2(-784.27136, -175.5108)
+scale = Vector2(0.99999994, 0.99999994)
+
 [node name="platform_mid4" parent="platforms" unique_id=1101931908 instance=ExtResource("8_ssg1i")]
 position = Vector2(469.99988, -432.9999)
 scale = Vector2(0.99999994, 0.99999994)
@@ -195,5 +289,80 @@ scale = Vector2(0.99999994, 0.99999994)
 [node name="platform_mid7" parent="platforms" unique_id=1893112881 instance=ExtResource("8_ssg1i")]
 position = Vector2(1445, -841.99994)
 scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large7" parent="platforms" unique_id=1129418284 instance=ExtResource("3_l58rl")]
+position = Vector2(867.0001, -1116)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large8" parent="platforms" unique_id=2071706308 instance=ExtResource("3_l58rl")]
+position = Vector2(604.00006, -1695)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large9" parent="platforms" unique_id=1712090114 instance=ExtResource("3_l58rl")]
+position = Vector2(985.0001, -2116)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large10" parent="platforms" unique_id=575173524 instance=ExtResource("3_l58rl")]
+position = Vector2(1867.0001, -2640)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large11" parent="platforms" unique_id=929298598 instance=ExtResource("3_l58rl")]
+position = Vector2(1593.0002, -2107)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid8" parent="platforms" unique_id=1114903185 instance=ExtResource("8_ssg1i")]
+position = Vector2(1348.0001, -2203)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid9" parent="platforms" unique_id=875372692 instance=ExtResource("8_ssg1i")]
+position = Vector2(1693.0001, -2427)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid10" parent="platforms" unique_id=1771633572 instance=ExtResource("8_ssg1i")]
+position = Vector2(860, -1504.9999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large2" parent="platforms/platform_mid10" unique_id=337572422 instance=ExtResource("3_l58rl")]
+position = Vector2(-1416.6581, 933.47644)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large3" parent="platforms/platform_mid10" unique_id=1708463455 instance=ExtResource("3_l58rl")]
+position = Vector2(-1679.6582, 354.47635)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large4" parent="platforms/platform_mid10" unique_id=1703843812 instance=ExtResource("3_l58rl")]
+position = Vector2(-1298.6581, -66.52368)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large5" parent="platforms/platform_mid10" unique_id=1629428284 instance=ExtResource("3_l58rl")]
+position = Vector2(-416.65808, -590.52374)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large6" parent="platforms/platform_mid10" unique_id=1211295119 instance=ExtResource("3_l58rl")]
+position = Vector2(-690.65796, -57.52368)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid" parent="platforms/platform_mid10" unique_id=1156463717 instance=ExtResource("8_ssg1i")]
+position = Vector2(-935.6581, -153.52362)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid2" parent="platforms/platform_mid10" unique_id=1203934782 instance=ExtResource("8_ssg1i")]
+position = Vector2(-590.6581, -377.52362)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid3" parent="platforms/platform_mid10" unique_id=948010918 instance=ExtResource("8_ssg1i")]
+position = Vector2(-1423.6582, 544.4765)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Cow" type="Sprite2D" parent="." unique_id=1359275173]
+z_index = 3
+position = Vector2(55.00003, -99.999985)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_ssg1i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cow" unique_id=1223188104]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7td72")
+autoplay = &"cow"
 
 [connection signal="body_entered" from="platform_house/Area2D" to="." method="_on_area_2d_body_entered"]
