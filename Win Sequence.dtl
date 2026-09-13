@@ -1,2 +1,6 @@
-"player character": I made it! Quick, gotta turn off the immersion.
+"player character": I made it!
+audio "res://PC_Win.IMadeIt.mp3"
+"player character": Quick, gotta turn off the immersion.
+audio "res://PC_Win.QuickImmersion.mp3"
 "player character": Oh, turns out it was off this whole time.
+audio "res://PC_Win.TurnsOutItWasOff.mp3"
