@@ -3,12 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://xix2ocemc4vi" path="res://Scenes/player.tscn" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://ojm3mt7dkm3b" path="res://Scenes/dialog_trigger.tscn" id="2_dtjkg"]
 [ext_resource type="Resource" uid="uid://ddlbq61uoiq21" path="res://Dialogic/Timelines/dummy.dtl" id="3_eglq2"]
+[ext_resource type="PackedScene" uid="uid://24xewm3fcuve" path="res://Scenes/enemy_collider.tscn" id="4_rsyfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
 size = Vector2(655, 188)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eglq2"]
 size = Vector2(119, 92)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mywr"]
+size = Vector2(13, 20)
 
 [node name="TestLevel" type="Node2D" unique_id=1114123946]
 
@@ -29,3 +33,9 @@ timeline = ExtResource("3_eglq2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=696959175]
 position = Vector2(-49.5, -25)
 shape = SubResource("RectangleShape2D_eglq2")
+
+[node name="EnemyCollider" parent="." unique_id=703431294 instance=ExtResource("4_rsyfn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" unique_id=1430308687]
+position = Vector2(699, 341)
+shape = SubResource("RectangleShape2D_4mywr")
