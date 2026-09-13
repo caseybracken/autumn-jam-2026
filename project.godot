@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AutumnJam2026"
-run/main_scene="uid://dtj8s4tw02luk"
+run/main_scene="uid://cml6475fwmklv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

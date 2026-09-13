@@ -141,11 +141,12 @@ stream = ExtResource("4_0dka5")
 autoplay = true
 
 [node name="platform_house" type="StaticBody2D" parent="." unique_id=1811823125]
-position = Vector2(1590.9998, -2212)
+position = Vector2(1451.0001, -2097.9998)
 rotation = -0.097837105
 script = ExtResource("2_i4y6y")
 
 [node name="PlatformLarge" type="Sprite2D" parent="platform_house" unique_id=586981206]
+position = Vector2(0.8000946, 2.0881348)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_mc6e0")
 
@@ -270,15 +271,15 @@ position = Vector2(867.0001, -1116)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_large8" parent="platforms" unique_id=2071706308 instance=ExtResource("3_l58rl")]
-position = Vector2(686.99994, -1313.9999)
+position = Vector2(672, -1265.9999)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_large9" parent="platforms" unique_id=1712090114 instance=ExtResource("3_l58rl")]
-position = Vector2(915.00006, -1536)
+position = Vector2(1004.99994, -1398)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_large10" parent="platforms" unique_id=575173524 instance=ExtResource("3_l58rl")]
-position = Vector2(1797, -2060)
+position = Vector2(1678, -1922)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_large11" parent="platforms" unique_id=929298598 instance=ExtResource("3_l58rl")]
@@ -286,11 +287,19 @@ position = Vector2(1523.0001, -1527)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_mid8" parent="platforms" unique_id=1114903185 instance=ExtResource("8_ssg1i")]
-position = Vector2(1278, -1623)
+position = Vector2(1249, -1562.9998)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_mid9" parent="platforms" unique_id=875372692 instance=ExtResource("8_ssg1i")]
-position = Vector2(1623, -1847)
+position = Vector2(1449, -1727.9999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid10" parent="platforms" unique_id=1802926901 instance=ExtResource("8_ssg1i")]
+position = Vector2(354.99988, -193.99995)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid11" parent="platforms" unique_id=841416321 instance=ExtResource("8_ssg1i")]
+position = Vector2(745.99976, -613.9998)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="Cow" type="Sprite2D" parent="." unique_id=1359275173]

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://malpfi2nai1q" path="res://Textures/ufo.webp" id="1_0mbkb"]
 [ext_resource type="Script" uid="uid://35wif0yhka4d" path="res://Scenes/intro_1.gd" id="1_h7den"]
 [ext_resource type="Texture2D" uid="uid://c3ixarnbum2so" path="res://Textures/intro.png" id="2_du2ay"]
-[ext_resource type="AudioStream" uid="uid://2tg5np4gooqx" path="res://Audio/RetractorBeam.1.wav" id="3_du2ay"]
+[ext_resource type="AudioStream" uid="uid://tu7n44ucwlju" path="res://Audio/RetractorBeam.wav" id="4_3arkn"]
 [ext_resource type="PackedScene" uid="uid://cpfxuhhmouomi" path="res://Prefabs/subtitle.tscn" id="5_3arkn"]
 
 [sub_resource type="Animation" id="Animation_h7den"]
@@ -62,7 +62,7 @@ libraries/ = SubResource("AnimationLibrary_k3qvs")
 autoplay = &"new_animation"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2130091945]
-stream = ExtResource("3_du2ay")
+stream = ExtResource("4_3arkn")
 
 [node name="subtitle" parent="." unique_id=891367845 instance=ExtResource("5_3arkn")]
 offset_left = -589.0
