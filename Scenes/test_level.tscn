@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ojm3mt7dkm3b" path="res://Scenes/dialog_trigger.tscn" id="2_dtjkg"]
 [ext_resource type="Resource" uid="uid://dfue0ax6mrufk" path="res://Anarchist NPC.dtl" id="3_rsyfn"]
 [ext_resource type="PackedScene" uid="uid://24xewm3fcuve" path="res://Scenes/enemy_collider.tscn" id="4_rsyfn"]
+[ext_resource type="PackedScene" uid="uid://bq170v3ar7uc1" path="res://Scenes/Magma.tscn" id="5_7w7ni"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
 size = Vector2(655, 188)
@@ -42,3 +43,6 @@ shape = SubResource("RectangleShape2D_eglq2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCollider" unique_id=1430308687]
 position = Vector2(699, 341)
 shape = SubResource("RectangleShape2D_4mywr")
+
+[node name="Magma" parent="." unique_id=1545730156 instance=ExtResource("5_7w7ni")]
+polygon = PackedVector2Array(803, 306, 943, 316, 1036, 427, 903, 480, 770, 359)
