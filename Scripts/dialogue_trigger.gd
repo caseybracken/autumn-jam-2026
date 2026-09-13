@@ -8,6 +8,7 @@ extends Area2D
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event.is_action("left_click"):
+		input_pickable = false
 		if Dialogic.current_timeline == null:
 			var layout = Dialogic.start(timeline)
 			layout.register_character(load("res://player character.dch"), playerNode)
