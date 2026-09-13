@@ -7,7 +7,6 @@ extends Area2D
 @export var hippyNode: Node2D
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	print("something happened")
 	if event.is_action("left_click"):
 		if Dialogic.current_timeline == null:
 			var layout = Dialogic.start(timeline)
