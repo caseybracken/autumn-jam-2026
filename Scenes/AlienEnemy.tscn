@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ond4lohduwfx"]
 
-[ext_resource type="Script" uid="uid://btr6ajeiklh4o" path="res://Scenes/alien_enemy.gd" id="1_dtboc"]
+[ext_resource type="Script" uid="uid://btr6ajeiklh4o" path="res://Scripts/alien_enemy.gd" id="1_dtboc"]
 [ext_resource type="PackedScene" uid="uid://24xewm3fcuve" path="res://Scenes/enemy_collider.tscn" id="2_8058l"]
 [ext_resource type="Texture2D" uid="uid://dtqwl0ha267td" path="res://Textures/ufo_alien-removebg-preview.png" id="3_8058l"]
 

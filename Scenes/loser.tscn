@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://b1bn6q7jtslt"]
 
 [ext_resource type="Script" uid="uid://bbgc3mtbnwop" path="res://Scenes/loser.gd" id="1_n6dye"]
+[ext_resource type="AudioStream" uid="uid://dbabbq8rx5gs6" path="res://Audio/bg_music_1.mp3" id="2_otmj7"]
+[ext_resource type="AudioStream" uid="uid://1qd045r3ojnt" path="res://Audio/Announcer/Narrator.YouWereEliminated.mp3" id="2_urmmc"]
+[ext_resource type="AudioStream" uid="uid://ciqgh67ra0kn7" path="res://Audio/Announcer/Narrator.ResistanceWasFutile.mp3" id="3_ixody"]
+[ext_resource type="AudioStream" uid="uid://badwb7y8fqcg3" path="res://Audio/Announcer/Narrator.ElectricityBill.mp3" id="4_aqi33"]
+[ext_resource type="AudioStream" uid="uid://dx4iodyv76aug" path="res://Audio/Announcer/Narrator.YouSuccumbed.mp3" id="5_7l1t6"]
+[ext_resource type="AudioStream" uid="uid://xmilq5vkeo2y" path="res://Audio/Announcer/Narrator.Splat.mp3" id="6_bfvep"]
 
 [node name="Loser" type="VBoxContainer" unique_id=766796707]
 anchors_preset = 15
@@ -10,6 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 script = ExtResource("1_n6dye")
+announcer_lines = Array[AudioStream]([ExtResource("2_urmmc"), ExtResource("3_ixody"), ExtResource("4_aqi33"), ExtResource("5_7l1t6"), ExtResource("6_bfvep")])
 
 [node name="Timer" type="Timer" parent="." unique_id=1385535611]
 wait_time = 5.0
@@ -21,5 +28,13 @@ layout_mode = 2
 text = "GAME OVER!!"
 fit_content = true
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1245380153]
+stream = ExtResource("2_otmj7")
+volume_db = -9.197
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=234068574]
+volume_db = 14.857
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

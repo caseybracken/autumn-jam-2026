@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bq170v3ar7uc1"]
+
+[ext_resource type="Script" uid="uid://cc8vnkamxxnfv" path="res://Scripts/magma.gd" id="1_b3jnf"]
+[ext_resource type="PackedScene" uid="uid://24xewm3fcuve" path="res://Scenes/enemy_collider.tscn" id="2_030do"]
+
+[node name="Magma" type="Polygon2D" unique_id=1545730156]
+color = Color(0.84762865, 0.15234861, 0.019966368, 1)
+script = ExtResource("1_b3jnf")
+
+[node name="EnemyCollider" parent="." unique_id=703431294 instance=ExtResource("2_030do")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="EnemyCollider" unique_id=1515685221]
