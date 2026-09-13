@@ -6,4 +6,4 @@ func game_over():
 
 func back_to_game():
 	# player is humiliated enough. back to game
-	get_tree().change_scene_to_file("res://Scenes/test_level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/platform_test_level.tscn")

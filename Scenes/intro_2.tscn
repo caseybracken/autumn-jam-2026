@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c3ixarnbum2so" path="res://Textures/intro.png" id="2_du2ay"]
 [ext_resource type="AudioStream" uid="uid://tu7n44ucwlju" path="res://Audio/RetractorBeam.wav" id="4_3arkn"]
 [ext_resource type="PackedScene" uid="uid://cpfxuhhmouomi" path="res://Prefabs/subtitle.tscn" id="5_3arkn"]
+[ext_resource type="AudioStream" uid="uid://5qf58yfxnkd8" path="res://Audio/NarratorOpener.Line_3.mp3" id="6_k3qvs"]
 
 [sub_resource type="Animation" id="Animation_h7den"]
 length = 0.001
@@ -70,3 +71,6 @@ offset_top = 234.0
 offset_right = 611.0
 offset_bottom = 334.0
 text = "They aimed a cataclysmic-world-ending-super-catastrophic-lazerbeam smack-bam at Earth's centre."
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1227594349]
+stream = ExtResource("6_k3qvs")

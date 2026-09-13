@@ -2,24 +2,33 @@
 
 [ext_resource type="Script" uid="uid://btr6ajeiklh4o" path="res://Scenes/alien_enemy.gd" id="1_dtboc"]
 [ext_resource type="PackedScene" uid="uid://24xewm3fcuve" path="res://Scenes/enemy_collider.tscn" id="2_8058l"]
+[ext_resource type="Texture2D" uid="uid://dtqwl0ha267td" path="res://Textures/ufo_alien-removebg-preview.png" id="3_8058l"]
 
 [sub_resource type="Curve2D" id="Curve2D_dtboc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 14, 14, 0, 0, 0, 0, 131, 27, 0, 0, 0, 0, 180, 133, 0, 0, 0, 0, 26, 163)
+"points": PackedVector2Array(-134.17865, 87.24451, 134.17865, -87.24451, -4, -23, -49.45552, -61.19139, 49.45552, 61.19139, 205, -34, 24.75, -33.7051, -24.75, 33.7051, 218, 63, 43.45, -22, -43.45, 22, 180, 133, 47.92421, 40.43226, -47.92421, -40.43226, 5, 144, 4.665073, -36.154316, -4.665073, 36.154316, -15, 27)
 }
-point_count = 4
+point_count = 6
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4mywr"]
+size = Vector2(39.31362, 20)
 
 [node name="AlienEnemy" type="Path2D" unique_id=1733919163]
 curve = SubResource("Curve2D_dtboc")
 script = ExtResource("1_dtboc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=2052310654]
-position = Vector2(14, 14)
-rotation = 0.110657215
+position = Vector2(-4, -23)
+rotation = -0.5765239
 
 [node name="EnemyCollider" parent="PathFollow2D" unique_id=703431294 instance=ExtResource("2_8058l")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/EnemyCollider" unique_id=236631905]
+position = Vector2(0.5521536, 9.536743e-07)
 shape = SubResource("RectangleShape2D_4mywr")
+
+[node name="UfoAlienRemovebgPreview" type="Sprite2D" parent="PathFollow2D/EnemyCollider/CollisionShape2D" unique_id=1532263041]
+position = Vector2(0.110435486, -3.0920835)
+rotation = -0.03265433
+scale = Vector2(0.095, 0.095)
+texture = ExtResource("3_8058l")
