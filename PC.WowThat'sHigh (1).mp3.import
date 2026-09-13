@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0nhvbcqpv1g0"
+path="res://.godot/imported/PC.WowThat'sHigh (1).mp3-934efbce992e19244d6ff048087de0a3.mp3str"
+
+[deps]
+
+source_file="res://PC.WowThat'sHigh (1).mp3"
+dest_files=["res://.godot/imported/PC.WowThat'sHigh (1).mp3-934efbce992e19244d6ff048087de0a3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
