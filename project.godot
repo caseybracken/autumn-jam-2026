@@ -21,11 +21,43 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"Aloof NPC": "res://Aloof NPC.dch",
+"Anarchist NPC": "res://Anarchist NPC.dch",
+"Hippy NPC": "res://Hippy NPC.dch",
+"player character": "res://player character.dch"
+}
 directories/dtl_directory={
+"Alien Bark 1": "res://Alien Bark 1.dtl",
+"Alien Bark 2": "res://Alien Bark 2.dtl",
+"Alien Bark 3": "res://Alien Bark 3.dtl",
+"Alien Bark 4": "res://Alien Bark 4.dtl",
+"Alien Bark 5": "res://Alien Bark 5.dtl",
+"Alien Bark 6": "res://Alien Bark 6.dtl",
+"Alien Bark 7": "res://Alien Bark 7.dtl",
+"Aloof NPC": "res://Aloof NPC.dtl",
+"Anarchist NPC": "res://Anarchist NPC.dtl",
+"Hippy NPC": "res://Hippy NPC.dtl",
+"Opening Sequence": "res://Opening Sequence.dtl",
+"PC Bark 1": "res://PC Bark 1.dtl",
+"PC Bark 2": "res://PC Bark 2.dtl",
+"PC Bark 3": "res://PC Bark 3.dtl",
+"PC Bark 4": "res://PC Bark 4.dtl",
+"PC Bark 5": "res://PC Bark 5.dtl",
+"PC Bark 6": "res://PC Bark 6.dtl",
+"Win Sequence": "res://Win Sequence.dtl",
 "dummy": "res://Dialogic/Timelines/dummy.dtl"
 }
 layout/style_directory={}
+glossary/default_case_sensitive=true
+layout/style_list=["res://text bubble style.tres"]
+layout/default_style="res://text bubble style.tres"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [editor_plugins]
 
@@ -42,12 +74,6 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
-
-[display]
-
-window/size/viewport_width=1280
-window/size/viewport_height=720
-window/stretch/mode="viewport"
 
 [physics]
 
