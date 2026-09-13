@@ -8,7 +8,7 @@
 
 [node name="Player" type="CharacterBody2D" unique_id=1859586231]
 floor_stop_on_slope = false
-floor_max_angle = 1.0489429
+floor_max_angle = 2.406809
 script = ExtResource("1_v0iea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1990500547]
@@ -16,6 +16,7 @@ shape = SubResource("CapsuleShape2D_cvnsp")
 
 [node name="jump_audio" type="AudioStreamPlayer2D" parent="." unique_id=999850149]
 stream = ExtResource("2_cvnsp")
+volume_db = 1.0
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=1249849376]
 position = Vector2(0, -5)

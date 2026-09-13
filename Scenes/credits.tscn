@@ -29,18 +29,6 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/RichTextLabel:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_ccovl"]
 resource_name = "house_shrink"
@@ -69,23 +57,48 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0.8, 0.8), Vector2(0.001, 0.001)]
 }
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CanvasLayer/RichTextLabel:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1.06),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1bamb"]
 _data = {
 &"RESET": SubResource("Animation_gryuy"),
 &"house_shrink": SubResource("Animation_ccovl")
+}
+
+[sub_resource type="Animation" id="Animation_1bamb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(149, 761)]
+}
+
+[sub_resource type="Animation" id="Animation_xelri"]
+resource_name = "credits scroll"
+length = 40.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 40),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(149, 761), Vector2(149, -671)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uah1q"]
+_data = {
+&"RESET": SubResource("Animation_1bamb"),
+&"credits scroll": SubResource("Animation_xelri")
 }
 
 [node name="Node2D" type="Node2D" unique_id=113946360]
@@ -131,18 +144,62 @@ position = Vector2(-410, 260.99997)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_gryuy")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=397311335]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=431617558]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=880081655]
-modulate = Color(1, 1, 1, 0)
-offset_left = -606.0
-offset_top = 2.0
-offset_right = -406.0
-offset_bottom = 402.0
-theme_override_font_sizes/normal_font_size = 48
-text = "A game by:
-Name A
-Name B
-Name C
-"
-fit_content = true
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer" unique_id=992660041]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -491.0
+offset_top = 761.0
+offset_right = 509.0005
+offset_bottom = 1761.0007
+grow_horizontal = 2
+text = "Programming + Level Design: 
+
+icosadose 
+Bobby
+
+Soundtrack: 
+
+Cahal  
+Henry
+
+Sound Engineer: 
+
+Brian Kelly
+
+Art and Animation: 
+
+Prionnsias Mullin 
+Bobby 
+Emily
+
+Voice Acting:
+
+Brian Kelly
+Henry
+Cahal
+
+Story and Writing: 
+
+Emily
+
+
+
+
+
+
+
+
+
+
+
+
+
+Galway Game Jam 2026"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1967528963]
+libraries/ = SubResource("AnimationLibrary_uah1q")
+autoplay = &"credits scroll"

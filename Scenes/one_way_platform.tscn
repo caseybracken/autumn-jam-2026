@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bngxxgm7pi8xh"]
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1598658042]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=278079615]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2133845412]
+one_way_collision = true
