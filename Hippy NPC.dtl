@@ -1,10 +1,13 @@
 "Hippy NPC": Hey! What's the hurry, pal?
+audio "res://NPC_Hippy.Line1.mp3"
 [style name="text bubble style"]
 "player character": I've left the immersion on at home!
 [style name="text bubble style"]
 "Hippy NPC": It's the end of the world, friend. Release your inhibitions!
+audio "res://NPC_Hippy.Line2.mp3"
 [style name="text bubble style"]
 "player character": Sorry, I don't have time!
 [style name="text bubble style"]
 "Hippy NPC": Feel the rain on your skin!
+audio "res://NPC_Hippy.Line3 (1).mp3"
 [style name="text bubble style"]
