@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bs7ceiy0e83pq"]
+
+[ext_resource type="AudioStream" uid="uid://crvg28gems30" path="res://Audio/Game jam house.wav" id="1_y82jy"]
+
+[node name="always_music" type="Node" unique_id=254322176]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1528436281]
+stream = ExtResource("1_y82jy")
+autoplay = true

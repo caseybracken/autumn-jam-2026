@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b8d5db1e7q812" path="res://Scenes/level_manager.gd" id="1_w5xbn"]
 [ext_resource type="Script" uid="uid://edfnqig3p537" path="res://Scenes/platform_move.gd" id="2_i4y6y"]
 [ext_resource type="PackedScene" uid="uid://dcf1svfylt5w6" path="res://Prefabs/platform_large.tscn" id="3_l58rl"]
-[ext_resource type="AudioStream" uid="uid://dbabbq8rx5gs6" path="res://Audio/bg_music_1.mp3" id="4_0dka5"]
+[ext_resource type="AudioStream" uid="uid://q4vq636mntwr" path="res://Audio/main.wav" id="3_ptj43"]
 [ext_resource type="Texture2D" uid="uid://dq8p0cpqckpng" path="res://Textures/house.png" id="5_mc6e0"]
 [ext_resource type="Texture2D" uid="uid://bobiplon38lik" path="res://Textures/start_zone.png" id="8_l58rl"]
 [ext_resource type="PackedScene" uid="uid://blwapd1sxdgho" path="res://Prefabs/platform_mid.tscn" id="8_ssg1i"]
@@ -342,7 +342,8 @@ position = Vector2(604, 503)
 shape = SubResource("RectangleShape2D_dtjkg")
 
 [node name="BG_music" type="AudioStreamPlayer2D" parent="." unique_id=1329594927]
-stream = ExtResource("4_0dka5")
+stream = ExtResource("3_ptj43")
+volume_db = -2.971
 autoplay = true
 
 [node name="platform_house" type="StaticBody2D" parent="." unique_id=1811823125]

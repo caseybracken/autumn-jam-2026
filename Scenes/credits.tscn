@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dq8p0cpqckpng" path="res://Textures/house.png" id="1_r18jl"]
 [ext_resource type="Texture2D" uid="uid://b404sg5orbfsv" path="res://Textures/star.png" id="2_gryuy"]
+[ext_resource type="PackedScene" uid="uid://bs7ceiy0e83pq" path="res://Prefabs/always_music.tscn" id="3_ccovl"]
 
 [sub_resource type="Animation" id="Animation_gryuy"]
 length = 0.001
@@ -197,3 +198,5 @@ horizontal_alignment = 1
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1967528963]
 libraries/ = SubResource("AnimationLibrary_uah1q")
 autoplay = &"credits scroll"
+
+[node name="always_music" parent="AnimationPlayer2" unique_id=254322176 instance=ExtResource("3_ccovl")]

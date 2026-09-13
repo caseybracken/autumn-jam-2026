@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dc2t75puhdoei" path="res://Textures/character_yellow_idle.png" id="2_8fo1c"]
 [ext_resource type="Texture2D" uid="uid://djc6ecynu5c77" path="res://Textures/its_off.png" id="3_ek8ke"]
 [ext_resource type="Texture2D" uid="uid://1cbrkebhwl51" path="res://Textures/uh_oh.png" id="4_eoghk"]
+[ext_resource type="PackedScene" uid="uid://bs7ceiy0e83pq" path="res://Prefabs/always_music.tscn" id="6_j3ryr"]
 
 [sub_resource type="Animation" id="Animation_8fo1c"]
 length = 0.001
@@ -135,3 +136,5 @@ visible = false
 position = Vector2(-26, 21)
 scale = Vector2(-1.255, 1.255)
 texture = ExtResource("4_eoghk")
+
+[node name="always_music" parent="." unique_id=254322176 instance=ExtResource("6_j3ryr")]
