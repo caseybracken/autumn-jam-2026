@@ -48,7 +48,10 @@ directories/dtl_directory={
 "Win Sequence": "res://Win Sequence.dtl",
 "dummy": "res://Dialogic/Timelines/dummy.dtl"
 }
-layout/style_directory={}
+layout/style_directory={
+"": "res://text bubble style.tres",
+"text bubble style": "res://text bubble style.tres"
+}
 glossary/default_case_sensitive=true
 layout/style_list=["res://text bubble style.tres"]
 layout/default_style="res://text bubble style.tres"
