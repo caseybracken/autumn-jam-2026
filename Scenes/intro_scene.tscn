@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cml6475fwmklv"]
+
+[ext_resource type="PackedScene" uid="uid://v07tf2v6sktx" path="res://Scenes/intro_1.tscn" id="1_d30j0"]
+[ext_resource type="Script" uid="uid://dx3otjnmbrpfh" path="res://Scenes/intro_scene.gd" id="1_m538q"]
+[ext_resource type="PackedScene" uid="uid://cvp47ldhw4ckq" path="res://Scenes/intro_0.tscn" id="2_aqy4q"]
+[ext_resource type="AudioStream" uid="uid://dbabbq8rx5gs6" path="res://Audio/bg_music_1.mp3" id="2_bbocs"]
+[ext_resource type="PackedScene" uid="uid://ck37slfgwqmhf" path="res://Scenes/intro_2.tscn" id="4_aqy4q"]
+[ext_resource type="PackedScene" uid="uid://cupsl3btvmal5" path="res://Scenes/intro_3.tscn" id="5_hq3du"]
+[ext_resource type="PackedScene" uid="uid://c36tpnask133a" path="res://Scenes/intro_4.tscn" id="6_ctf76"]
+
+[node name="Node2D" type="Node2D" unique_id=201575727]
+script = ExtResource("1_m538q")
+
+[node name="intro_0" parent="." unique_id=565682442 instance=ExtResource("2_aqy4q")]
+
+[node name="intro_1" parent="." unique_id=246982822 instance=ExtResource("1_d30j0")]
+visible = false
+
+[node name="intro_2" parent="." unique_id=798153708 instance=ExtResource("4_aqy4q")]
+visible = false
+
+[node name="intro_3" parent="." unique_id=541874150 instance=ExtResource("5_hq3du")]
+visible = false
+
+[node name="intro_4" parent="." unique_id=297855562 instance=ExtResource("6_ctf76")]
+visible = false
+
+[node name="bg_music" type="AudioStreamPlayer2D" parent="." unique_id=1978732132]
+stream = ExtResource("2_bbocs")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=709451728]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Timer2" type="Timer" parent="." unique_id=1691053935]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Timer3" type="Timer" parent="." unique_id=148845300]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="Timer4" type="Timer" parent="." unique_id=1094954577]
+wait_time = 11.0
+one_shot = true
+autostart = true
+
+[node name="TimerFinal" type="Timer" parent="." unique_id=1783949648]
+wait_time = 15.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]
+[connection signal="timeout" from="Timer4" to="." method="_on_timer_4_timeout"]
+[connection signal="timeout" from="TimerFinal" to="." method="_on_timer_final_timeout"]

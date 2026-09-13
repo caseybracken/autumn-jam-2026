@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://ck37slfgwqmhf"]
+
+[ext_resource type="Texture2D" uid="uid://malpfi2nai1q" path="res://Textures/ufo.webp" id="1_0mbkb"]
+[ext_resource type="Script" uid="uid://35wif0yhka4d" path="res://Scenes/intro_1.gd" id="1_h7den"]
+[ext_resource type="Texture2D" uid="uid://c3ixarnbum2so" path="res://Textures/intro.png" id="2_du2ay"]
+[ext_resource type="AudioStream" uid="uid://2tg5np4gooqx" path="res://Audio/RetractorBeam.1.wav" id="3_du2ay"]
+[ext_resource type="PackedScene" uid="uid://cpfxuhhmouomi" path="res://Prefabs/subtitle.tscn" id="5_3arkn"]
+
+[sub_resource type="Animation" id="Animation_h7den"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3arkn"]
+resource_name = "new_animation"
+length = 0.13333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k3qvs"]
+_data = {
+&"RESET": SubResource("Animation_h7den"),
+&"new_animation": SubResource("Animation_3arkn")
+}
+
+[node name="Node2D" type="Node2D" unique_id=798153708]
+script = ExtResource("1_h7den")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1734698832]
+
+[node name="Ufo" type="Sprite2D" parent="." unique_id=2127933398]
+position = Vector2(0, 5)
+texture = ExtResource("1_0mbkb")
+
+[node name="Intro" type="Sprite2D" parent="." unique_id=494219482]
+position = Vector2(0, 5)
+texture = ExtResource("2_du2ay")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1709909516]
+libraries/ = SubResource("AnimationLibrary_k3qvs")
+autoplay = &"new_animation"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=2130091945]
+stream = ExtResource("3_du2ay")
+
+[node name="subtitle" parent="." unique_id=891367845 instance=ExtResource("5_3arkn")]
+offset_left = -589.0
+offset_top = 234.0
+offset_right = 611.0
+offset_bottom = 334.0
+text = "They aimed a cataclysmic-world-ending-super-catastrophic-lazerbeam smack-bam at Earth's centre."

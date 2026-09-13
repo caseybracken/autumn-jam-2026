@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://bobiplon38lik" path="res://Textures/start_zone.png" id="8_l58rl"]
 [ext_resource type="PackedScene" uid="uid://blwapd1sxdgho" path="res://Prefabs/platform_mid.tscn" id="8_ssg1i"]
 [ext_resource type="Texture2D" uid="uid://b404sg5orbfsv" path="res://Textures/star.png" id="9_eq7n2"]
+[ext_resource type="Texture2D" uid="uid://buwp8j6ic2ne3" path="res://Textures/cow.png" id="10_ssg1i"]
+[ext_resource type="AudioStream" uid="uid://c3343uvn8db7w" path="res://Audio/CowMoo.1.mp3" id="11_u54at"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
 size = Vector2(655, 188)
@@ -56,6 +58,67 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tf4te"]
 size = Vector2(100.42859, 58.267677)
 
+[sub_resource type="Animation" id="Animation_ssg1i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(55.00003, -99.999985)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_u54at"]
+resource_name = "cow"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(55.00003, -99.999985), Vector2(1620, 956)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 5.412266010434417]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7td72"]
+_data = {
+&"RESET": SubResource("Animation_ssg1i"),
+&"cow": SubResource("Animation_u54at")
+}
+
 [node name="TestLevel" type="Node2D" unique_id=1114123946]
 script = ExtResource("1_w5xbn")
 
@@ -78,7 +141,7 @@ stream = ExtResource("4_0dka5")
 autoplay = true
 
 [node name="platform_house" type="StaticBody2D" parent="." unique_id=1811823125]
-position = Vector2(814.9999, 326.00024)
+position = Vector2(1590.9998, -2212)
 rotation = -0.097837105
 script = ExtResource("2_i4y6y")
 
@@ -142,6 +205,16 @@ position = Vector2(244.99998, -100.99997)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("9_eq7n2")
 
+[node name="Star5" type="Sprite2D" parent="bg" unique_id=1493546701]
+position = Vector2(705.1, -878.4999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_eq7n2")
+
+[node name="Star6" type="Sprite2D" parent="bg" unique_id=1652457176]
+position = Vector2(748.0999, -852.4999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_eq7n2")
+
 [node name="platforms" type="Node" parent="." unique_id=512201413]
 
 [node name="platform_large" parent="platforms" unique_id=1369783877 instance=ExtResource("3_l58rl")]
@@ -153,11 +226,11 @@ position = Vector2(449.99997, 309.00003)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_large3" parent="platforms" unique_id=1625292747 instance=ExtResource("3_l58rl")]
-position = Vector2(186.99994, -270.00003)
+position = Vector2(527, -49.99994)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_large4" parent="platforms" unique_id=457684434 instance=ExtResource("3_l58rl")]
-position = Vector2(568, -691.00006)
+position = Vector2(908.0001, -470.99997)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_large5" parent="platforms" unique_id=1963551907 instance=ExtResource("3_l58rl")]
@@ -176,12 +249,8 @@ scale = Vector2(0.99999994, 0.99999994)
 position = Vector2(1276, -1002)
 scale = Vector2(0.99999994, 0.99999994)
 
-[node name="platform_mid3" parent="platforms" unique_id=291680282 instance=ExtResource("8_ssg1i")]
-position = Vector2(442.99988, -79.99988)
-scale = Vector2(0.99999994, 0.99999994)
-
 [node name="platform_mid4" parent="platforms" unique_id=1101931908 instance=ExtResource("8_ssg1i")]
-position = Vector2(469.99988, -432.9999)
+position = Vector2(810, -212.99982)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_mid5" parent="platforms" unique_id=1415354365 instance=ExtResource("8_ssg1i")]
@@ -189,11 +258,54 @@ position = Vector2(357.99988, 135.00018)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_mid6" parent="platforms" unique_id=1631121706 instance=ExtResource("8_ssg1i")]
-position = Vector2(272.99988, -563.9999)
+position = Vector2(613, -343.9998)
 scale = Vector2(0.99999994, 0.99999994)
 
 [node name="platform_mid7" parent="platforms" unique_id=1893112881 instance=ExtResource("8_ssg1i")]
 position = Vector2(1445, -841.99994)
 scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large7" parent="platforms" unique_id=1129418284 instance=ExtResource("3_l58rl")]
+position = Vector2(867.0001, -1116)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large8" parent="platforms" unique_id=2071706308 instance=ExtResource("3_l58rl")]
+position = Vector2(686.99994, -1313.9999)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large9" parent="platforms" unique_id=1712090114 instance=ExtResource("3_l58rl")]
+position = Vector2(915.00006, -1536)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large10" parent="platforms" unique_id=575173524 instance=ExtResource("3_l58rl")]
+position = Vector2(1797, -2060)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_large11" parent="platforms" unique_id=929298598 instance=ExtResource("3_l58rl")]
+position = Vector2(1523.0001, -1527)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid8" parent="platforms" unique_id=1114903185 instance=ExtResource("8_ssg1i")]
+position = Vector2(1278, -1623)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="platform_mid9" parent="platforms" unique_id=875372692 instance=ExtResource("8_ssg1i")]
+position = Vector2(1623, -1847)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Cow" type="Sprite2D" parent="." unique_id=1359275173]
+z_index = 3
+position = Vector2(55.00003, -99.999985)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("10_ssg1i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Cow" unique_id=1223188104]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_7td72")
+autoplay = &"cow"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Cow" unique_id=625518939]
+stream = ExtResource("11_u54at")
+autoplay = true
 
 [connection signal="body_entered" from="platform_house/Area2D" to="." method="_on_area_2d_body_entered"]
