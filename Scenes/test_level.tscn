@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://xix2ocemc4vi" path="res://Scenes/player.tscn" id="1_iti4p"]
 [ext_resource type="PackedScene" uid="uid://ojm3mt7dkm3b" path="res://Scenes/dialog_trigger.tscn" id="2_dtjkg"]
-[ext_resource type="Resource" uid="uid://ddlbq61uoiq21" path="res://Dialogic/Timelines/dummy.dtl" id="3_eglq2"]
+[ext_resource type="Resource" uid="uid://dfue0ax6mrufk" path="res://Anarchist NPC.dtl" id="3_rsyfn"]
 [ext_resource type="PackedScene" uid="uid://24xewm3fcuve" path="res://Scenes/enemy_collider.tscn" id="4_rsyfn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtjkg"]
@@ -25,10 +25,13 @@ position = Vector2(600, 362)
 position = Vector2(604, 503)
 shape = SubResource("RectangleShape2D_dtjkg")
 
-[node name="Area2D" parent="." unique_id=1998559503 instance=ExtResource("2_dtjkg")]
+[node name="Area2D" parent="." unique_id=1998559503 node_paths=PackedStringArray("playerNode", "anarchistNode", "aloofNode", "hippyNode") instance=ExtResource("2_dtjkg")]
 position = Vector2(430, 369)
-collision_layer = 0
-timeline = ExtResource("3_eglq2")
+timeline = ExtResource("3_rsyfn")
+playerNode = NodePath("../Player")
+anarchistNode = NodePath("../EnemyCollider/CollisionShape2D")
+aloofNode = NodePath("../EnemyCollider/CollisionShape2D")
+hippyNode = NodePath("../EnemyCollider/CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=696959175]
 position = Vector2(-49.5, -25)
