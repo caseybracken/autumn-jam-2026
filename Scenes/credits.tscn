@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b107shc5akjdi"]
 
+[ext_resource type="Script" uid="uid://uuepoyrm5ojp" path="res://Scenes/credits.gd" id="1_1bamb"]
 [ext_resource type="Texture2D" uid="uid://dq8p0cpqckpng" path="res://Textures/house.png" id="1_r18jl"]
 [ext_resource type="Texture2D" uid="uid://b404sg5orbfsv" path="res://Textures/star.png" id="2_gryuy"]
 [ext_resource type="PackedScene" uid="uid://bs7ceiy0e83pq" path="res://Prefabs/always_music.tscn" id="3_ccovl"]
@@ -102,7 +103,45 @@ _data = {
 &"credits scroll": SubResource("Animation_xelri")
 }
 
+[sub_resource type="Animation" id="Animation_uah1q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Button:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7emq5"]
+resource_name = "new_animation"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Button:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(4.497895, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_803yc"]
+_data = {
+&"RESET": SubResource("Animation_uah1q"),
+&"new_animation": SubResource("Animation_7emq5")
+}
+
 [node name="Node2D" type="Node2D" unique_id=113946360]
+script = ExtResource("1_1bamb")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1247832568]
 
@@ -158,7 +197,7 @@ offset_bottom = 1761.0007
 grow_horizontal = 2
 text = "Programming + Level Design: 
 icosadose 
-Bobby
+Bobby | Yellowbyte Games 
 
 Soundtrack: 
 Cahal  Óg
@@ -169,7 +208,7 @@ Brian Kelly
 
 Art and Animation: 
 Prionnsias Mullin 
-Bobby 
+Bobby | Yellowbyte Games
 Emily McNamara
 
 Voice Acting:
@@ -195,8 +234,29 @@ Emily McNamara
 Galway Game Jam 2026"
 horizontal_alignment = 1
 
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1524195044]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -265.0
+offset_top = -146.0
+offset_right = -65.0
+offset_bottom = -66.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Play Again"
+
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=1967528963]
 libraries/ = SubResource("AnimationLibrary_uah1q")
 autoplay = &"credits scroll"
 
 [node name="always_music" parent="AnimationPlayer2" unique_id=254322176 instance=ExtResource("3_ccovl")]
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=2136295094]
+libraries/ = SubResource("AnimationLibrary_803yc")
+autoplay = &"new_animation"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
